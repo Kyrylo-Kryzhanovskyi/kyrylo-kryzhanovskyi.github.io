@@ -52,30 +52,22 @@
             <button type="submit">Надіслати</button>
         </form>
         <script>
-    document.getElementById("myForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form submission
-
-        // Perform an AJAX request to submit the form data
-        var formData = new FormData(this);
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", this.action, true);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                // Successful form submission
-                alert("Форму успішно надіслано!");
-                document.getElementById("myForm").reset(); // Reset the form
-            } else {
-                // Unsuccessful form submission
-                alert("Виникла помилка під час надсилання форми. Будь ласка, спробуйте знову.");
-            }
-        };
-        xhr.onerror = function() {
-            // Request error
-            alert("Виникла помилка під час відправки запиту. Будь ласка, спробуйте знову.");
-        };
-        xhr.send(formData);
-    });
-</script>
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form submission
+        
+                // Simulate a random success or failure
+                var isSuccess = Math.random() < 0.5; // 50% chance of success
+        
+                if (isSuccess) {
+                    // Successful form submission
+                    alert("Форму успішно надіслано!");
+                    document.getElementById("myForm").reset(); // Reset the form
+                } else {
+                    // Unsuccessful form submission
+                    alert("Виникла помилка під час надсилання форми. Будь ласка, спробуйте знову.");
+                }
+            });
+        </script>
     </main>
 
     <footer>
