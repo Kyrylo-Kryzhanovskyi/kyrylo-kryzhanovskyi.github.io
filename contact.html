@@ -36,7 +36,7 @@
 
         <p>Ви також можете заповнити форму зворотного зв'язку нижче, і ми зв'яжемося з вами найближчим часом:</p>
 
-        <form action="submit_form.php" method="POST">
+        <form id="myForm"action="#" method="POST">
             <label for="name">Ім'я:</label>
             <input type="text" id="name" name="name" required>
 
@@ -51,6 +51,31 @@
 
             <button type="submit">Надіслати</button>
         </form>
+        <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Perform an AJAX request to submit the form data
+        var formData = new FormData(this);
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", this.action, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Successful form submission
+                alert("Форму успішно надіслано!");
+                document.getElementById("myForm").reset(); // Reset the form
+            } else {
+                // Unsuccessful form submission
+                alert("Виникла помилка під час надсилання форми. Будь ласка, спробуйте знову.");
+            }
+        };
+        xhr.onerror = function() {
+            // Request error
+            alert("Виникла помилка під час відправки запиту. Будь ласка, спробуйте знову.");
+        };
+        xhr.send(formData);
+    });
+</script>
     </main>
 
     <footer>
