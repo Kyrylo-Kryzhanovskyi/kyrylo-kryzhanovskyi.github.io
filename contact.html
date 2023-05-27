@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зоопарк</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Зоопарк</h1>
+        <br>
+        <nav class="fixed-nav">
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="about.html">Про нас</a></li>
+                <li><a href="animals.html">Тварини</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Контакти</h2>
+
+        <p>Ми будемо раді відповісти на всі ваші запитання та надати додаткову інформацію про наш зоопарк. Ви можете
+            зв'язатися з нами за допомогою таких способів:</p>
+
+        <ul>
+            <li>Телефон: +380 (98) 150 7559</li>
+            <li>Електронна пошта: info@zoo.com</li>
+            <li>Адреса: майдан Свободи, 4, Харків</li>
+        </ul>
+
+        <p>Ви також можете заповнити форму зворотного зв'язку нижче, і ми зв'яжемося з вами найближчим часом:</p>
+
+        <form action="submit_form.php" method="POST">
+            <label for="name">Ім'я:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Електронна пошта:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+            
+            <label for="phone">Номер телефона:</label>
+            <input type="tel" id="phone" name="phone" pattern="(\+38)?\s?(\(0\d{2}\)|0\d{2})\s?\d{3}\s?\d{2}\s?\d{2}" placeholder="Наприклад: +380981234567 or 0981234567" required>
+
+            <label for="message">Повідомлення:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Надіслати</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Всі права захищені &copy; Зоопарк 2023</p>
+    </footer>
+
+</body>
+
+</html>
